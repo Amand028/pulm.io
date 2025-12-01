@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
+  
   const [screeningData, setScreeningData] = useState(null);
   const [uploadedImage, setUploadedImage] = useState(null);
   const [currentResult, setCurrentResult] = useState(null);

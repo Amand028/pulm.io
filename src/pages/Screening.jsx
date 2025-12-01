@@ -13,52 +13,83 @@ export default function Screening() {
   const { setScreeningData } = useApp();
 
   const [formData, setFormData] = useState({
-    persistentCough: false,
-    fever: false,
-    weightLoss: false,
-    nightSweats: false,
-    fatigue: false,
-    chestPain: false,
-    tbContact: false,
+  fever: false,
+  coughWithBlood: false,
+  bloodySputum: false,
+  nightSweats: false,
+  chestPain: false,
+  backPain: false,
+  shortnessOfBreath: false,
+  weightLoss: false,
+  fatigue: false,
+  swollenLymphNodes: false,
+  persistentCough: false,
+  lossOfAppetite: false,
   });
 
   const questions = [
     {
-      id: 'persistentCough',
-      label: 'Tosse persistente por mais de 3 semanas?',
-      description: 'Tosse seca ou com catarro que não melhora',
+      id: 'fever',
+      label: 'Febre por duas semanas?',
+      description: 'Temperatura elevada persistente, geralmente à tarde ou à noite',
     },
     {
-      id: 'fever',
-      label: 'Febre, especialmente à tarde?',
-      description: 'Temperatura elevada, geralmente no final do dia',
+      id: 'coughWithBlood',
+      label: 'Tosse com sangue?',
+      description: 'Presença de sangue ao tossir',
+    },
+    {
+      id: 'bloodySputum',
+      label: 'Escarro com sangue?',
+      description: 'Catarro acompanhado de sangue',
+    },
+    {
+      id: 'nightSweats',
+      label: 'Suores noturnos?',
+      description: 'Transpiração intensa durante a noite',
+    },
+    {
+      id: 'chestPain',
+      label: 'Dor no peito?',
+      description: 'Desconforto ou dor ao respirar ou tossir',
+    },
+    {
+      id: 'backPain',
+      label: 'Dor nas costas em certas partes?',
+      description: 'Dor localizada em regiões específicas da coluna',
+    },
+    {
+      id: 'shortnessOfBreath',
+      label: 'Falta de ar?',
+      description: 'Sensação de dificuldade para respirar',
     },
     {
       id: 'weightLoss',
       label: 'Perda de peso inexplicada?',
-      description: 'Emagrecimento sem mudança na dieta ou exercícios',
-    },
-    {
-      id: 'nightSweats',
-      label: 'Sudorese noturna intensa?',
-      description: 'Transpiração excessiva durante a noite',
+      description: 'Emagrecimento sem mudança de dieta ou exercícios',
     },
     {
       id: 'fatigue',
-      label: 'Fadiga e fraqueza constantes?',
-      description: 'Cansaço persistente e falta de energia',
+      label: 'Corpo cansado?',
+      description: 'Fadiga persistente e falta de energia',
     },
     {
-      id: 'chestPain',
-      label: 'Dor no peito ao respirar ou tossir?',
-      description: 'Desconforto ou dor na região torácica',
+      id: 'swollenLymphNodes',
+      label: 'Caroços nas axilas ou pescoço?',
+      description: 'Linfonodos inchados ou sensíveis',
     },
     {
-      id: 'tbContact',
-      label: 'Contato recente com pessoa com tuberculose?',
-      description: 'Convivência com alguém diagnosticado com TB',
+      id: 'persistentCough',
+      label: 'Tosse e catarro contínuos por 2-4 semanas?',
+      description: 'Tosse persistente, seca ou com catarro',
+    },
+    {
+      id: 'lossOfAppetite',
+      label: 'Perda de apetite?',
+      description: 'Diminuição do interesse em se alimentar',
     },
   ];
+
 
   const handleCheckboxChange = (id) => {
     setFormData((prev) => ({
