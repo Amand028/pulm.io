@@ -1,5 +1,6 @@
 {
   "name": "pulm.io",
+  "homepage": "https://github.com/Amand028/pulm.io.git",
   "private": true,
   "version": "0.0.0",
   "type": "module",

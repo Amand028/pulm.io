@@ -12,6 +12,12 @@ export default function Navigation() {
         <Link to="/screening" className="text-gray-700 hover:text-emerald-700">
           Triagem
         </Link>
+        <Link to="/upload" className="text-gray-700 hover:text-emerald-700">
+          Upload
+        </Link>
+        <Link to="/result" className="text-gray-700 hover:text-emerald-700">
+          Resultados
+        </Link>
       </div>
     </nav>
   );

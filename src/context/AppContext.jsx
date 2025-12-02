@@ -3,12 +3,11 @@ import { createContext, useContext, useState } from "react";
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  
   const [screeningData, setScreeningData] = useState(null);
-  const [uploadedImage, setUploadedImage] = useState(null);
+
+  // Novas variáveis para resultados
   const [currentResult, setCurrentResult] = useState(null);
   const [analysisHistory, setAnalysisHistory] = useState([]);
-  const [currentStep, setCurrentStep] = useState(0); // ✅ movido para cá
 
   // Função para adicionar ao histórico
   const addToHistory = (result) => {
@@ -21,8 +20,10 @@ export function AppProvider({ children }) {
     setUploadedImage(null);
     setCurrentResult(null);
     setAnalysisHistory([]);
-    setCurrentStep(0);
   };
+
+  // Caso você também queira guardar a imagem do upload
+  const [uploadedImage, setUploadedImage] = useState(null);
 
   return (
     <AppContext.Provider
@@ -36,8 +37,6 @@ export function AppProvider({ children }) {
         analysisHistory,
         addToHistory,
         resetApp,
-        currentStep,
-        setCurrentStep, // ✅ disponibilizado no contexto
       }}
     >
       {children}
@@ -48,3 +47,4 @@ export function AppProvider({ children }) {
 export function useApp() {
   return useContext(AppContext);
 }
+
