@@ -4,7 +4,8 @@ Pulmio é um aplicativo web desenvolvido para realizar triagem inicial de sintom
 O objetivo é demonstrar como um fluxo de pré-diagnóstico poderia funcionar em um ambiente real — mas sem uso de modelos reais, apenas simulação controlada, ideal para estudos, portfólio e disciplinas da faculdade.
 
 
-📱 Funcionalidades
+## 📱 Funcionalidades
+
 ✅ 1. Triagem de Sintomas
 
 O usuário seleciona sintomas como:
